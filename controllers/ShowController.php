@@ -9,6 +9,9 @@ use yii\data\Pagination;
 use app\models\Sprawdz;
 use app\models\EntryForm;
 
+
+
+
 class ShowController extends Controller
 {
     public function actionIndex()
@@ -25,7 +28,35 @@ class ShowController extends Controller
             ->limit($pagination->limit)
             ->all();
 
-        return $this->render('index', [
+        /*return $this->render('index', [
+            'table' => $table,
+            'pagination' => $pagination,
+        ]);*/
+
+        return $this->render('show-rows.tpl', [
+            'table' => $table,
+            'pagination' => $pagination
+        ]);
+
+        // [
+        //     'table' => $table,
+        //     'pagination' => $pagination,
+        // ]);
+    }
+    //pamietaj, ze nazwa funkcji to nazwa podstrony
+    public function actionShowRowPhp(){
+        $query = Sprawdz::find();
+
+        $pagination = new Pagination([
+            'defaultPageSize' => 5,
+            'totalCount' => $query->count(),
+        ]);
+
+        $table = $query->orderBy('imie')
+            ->offset($pagination->offset)
+            ->limit($pagination->limit)
+            ->all();
+        return $this->render('show-row-php', [
             'table' => $table,
             'pagination' => $pagination,
         ]);

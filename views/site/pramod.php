@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Html;
 ?>
-<p>You have Computa Firus, I am Pramod I am herre o fix you computa:</p>
+<p>You have Computa Firus, I am <?= Html::encode($model->name) ?> I am herre o fix you computa:</p>
 
 <ul>
     <li><label>Name</label>: <?= Html::encode($model->name) ?></li>
