@@ -82,3 +82,8 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+#testingConnectSmartyWithCssDivKoks{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}

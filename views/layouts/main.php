@@ -41,6 +41,7 @@ AppAsset::register($this);
             ['label' => 'About', 'url' => ['/site/about']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
             ['label' => 'Hello pramod', 'url' => ['/site/entry']],
+            ['label' => 'show row php', 'url' => ['/show/show-row-php']],
             ['label' => 'show row', 'url' => ['/show/index']],
             ['label' => 'add row', 'url' => ['/show/add']],
             Yii::$app->user->isGuest ? (
